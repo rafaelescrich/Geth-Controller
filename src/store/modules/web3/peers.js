@@ -1,4 +1,5 @@
 import store from '../../store'
+import { conectar } from './web3'
 
 export default {
     watchPeers(){
@@ -13,6 +14,7 @@ export default {
         web3.eth.net.getPeerCount((error, result) => {
             if(error){
                 store.commit('SET_PEERS', {})
+                conectar()
             } else{
                 store.commit('SET_PEERS', {count: result})
             }

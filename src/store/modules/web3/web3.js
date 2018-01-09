@@ -94,3 +94,5 @@ function tentarReconectar(){
             conectar()
         }, 1000);
 }
+
+export { conectar }
