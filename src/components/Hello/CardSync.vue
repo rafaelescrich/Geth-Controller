@@ -21,7 +21,10 @@ export default {
         ...mapGetters([
             'getSync',
             'getWeb3Conectado'
-        ])
+        ]),
+        percentage(){
+            return this.getSync.blocks.currentBlock * 100 / this.getSync.blocks.highestBlock
+        }
     },
 }
 </script>
@@ -39,7 +42,7 @@ export default {
                 Synced
               </template>
               <template v-else-if="getSync.blocks">
-                  {{getSync.blocks}}
+                  {{percentage.toFixed(2)}} %
               </template>
               <template v-else>
                   Desconectado

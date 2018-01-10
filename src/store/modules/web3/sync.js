@@ -1,10 +1,18 @@
 import store from '../../store'
+import { conectar } from './web3'
 
 export default {
     watchSync(){
+        this.writeSync()
+        setTimeout(() => {
+            this.watchSync()
+        }, 5000)
+    },
+    writeSync(payload){
+
         let web3 = store.state.web3.web3
         web3.eth.isSyncing((err, result) => {
-            let payload
+            let payload = { }
             if(!err){
                 if(result === true){
                     payload = new SyncPayload(true, null)
@@ -14,11 +22,8 @@ export default {
                     payload = new SyncPayload(false, null)
                 }
             }
-            this.writeSync(payload)
+            store.commit('SET_SYNC', payload)
         })
-    },
-    writeSync(payload){
-        store.commit('SET_SYNC', payload)
     }
 }
 

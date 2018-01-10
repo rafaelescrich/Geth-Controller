@@ -53,6 +53,7 @@ export default {
             console.error(err)
           }, result => this.currentCoinbase = result)
 
+        return this.currentCoinbase
       }
   }
 }
@@ -72,11 +73,6 @@ export default {
           <div>
               Coinbase: {{coinbase}}
           </div>
-          <div>
-              
-          </div>
-
-          {{Object.keys(getWeb3.eth)}}
       </q-card-main>
   </q-card>
 </template>
