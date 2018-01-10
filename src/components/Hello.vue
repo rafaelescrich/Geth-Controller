@@ -1,11 +1,13 @@
 <script>
 import CardPeers from './Hello/CardPeers.vue'
 import CardSync from './Hello/CardSync.vue'
+import CardPlusInfo from './Hello/CardPlusInfo.vue'
 
 export default {
     components: {
         CardPeers,
-        CardSync
+        CardSync,
+        CardPlusInfo
     }
 }
 </script>
@@ -21,8 +23,8 @@ export default {
             </div>
         </div>
         <div class="row">
-            <div class="col text-center">
-                fotase3
+            <div class="col-12 text-center">
+                <card-plus-info />
             </div>
             <div class="col text-center">
                 fotase4

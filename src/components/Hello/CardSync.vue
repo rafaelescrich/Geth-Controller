@@ -19,7 +19,8 @@ export default {
     },
     computed: {
         ...mapGetters([
-            'getSync'
+            'getSync',
+            'getWeb3Conectado'
         ])
     },
 }
@@ -34,14 +35,14 @@ export default {
       <q-card-separator />
       <q-card-main>
           <template v-if="getSync">
-              <template v-if="!getSync.isSyncing">
+              <template v-if="!getSync.isSyncing && getWeb3Conectado">
                 Synced
               </template>
               <template v-else-if="getSync.blocks">
-
+                  {{getSync.blocks}}
               </template>
               <template v-else>
-
+                  Desconectado
               </template>
           </template>
           <template v-else>

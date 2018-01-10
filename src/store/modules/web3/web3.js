@@ -3,6 +3,7 @@ import axios from 'axios'
 import store from '../../store'
 import Peers from './peers'
 import Sync from './sync'
+import Info from './info'
 
 let web3, web3Conectado = false
 
