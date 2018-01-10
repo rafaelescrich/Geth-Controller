@@ -1,21 +1,10 @@
 <script>
 import { mapGetters } from 'vuex'
-import { 
-    QCard, 
-    QCardTitle, 
-    QCardMain,
-    QCardSeparator,
-    QIcon
-    
-    } from 'quasar'
+import cardImports from '../../utils/cardImports'
     
 export default {
     components: {
-      QCard,
-      QCardTitle,
-      QCardMain,
-      QCardSeparator,
-      QIcon
+        ...cardImports
     },
     computed: {
         ...mapGetters([

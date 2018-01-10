@@ -1,20 +1,9 @@
 <script>
 import { mapGetters } from 'vuex'
-import { 
-    QCard, 
-    QCardTitle, 
-    QCardMain,
-    QCardSeparator,
-    QIcon
-    
-    } from 'quasar'
+import cardImports from '../../utils/cardImports'
 export default {
   components: {
-      QCard,
-      QCardTitle,
-      QCardMain,
-      QCardSeparator,
-      QIcon
+      ...cardImports
   },
   data(){
       return {
@@ -67,7 +56,10 @@ export default {
           +Info
       </q-card-title>
       <q-card-separator />
-      <q-card-main>
+      <q-card-main class="sm-gutter">
+          <div>
+            Version: {{getWeb3.version ? getWeb3.version : 'Disconnected'}}    
+          </div>
           <div>
             Gas Price: {{gasPrice}} ETH
           </div>
@@ -77,3 +69,4 @@ export default {
       </q-card-main>
   </q-card>
 </template>
+

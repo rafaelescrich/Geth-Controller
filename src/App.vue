@@ -1,7 +1,7 @@
 <template>
   <!-- Don't drop "q-app" class -->
   <div id="q-app">
-    <q-layout>
+    <q-layout view="hhh Lpr fFf">
       <st-header slot="header" />
       <router-view slot="navigation" />
       <st-footer slot="footer" />
