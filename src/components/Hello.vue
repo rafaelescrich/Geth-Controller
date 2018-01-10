@@ -15,19 +15,14 @@ export default {
 <template>
     <div class="container">
         <div class="row">
-            <div class="col text-center">
+            <div class="col-xs-12 col-md-4 text-center">
                 <card-peers />
             </div>
-            <div class="col text-center">
-                <card-sync />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 text-center">
+            <div class="col-xs-12 col-md-4 text-center">
                 <card-plus-info />
             </div>
-            <div class="col text-center">
-                fotase4
+            <div class="col-xs-12 col-md-4 text-center">
+                <card-sync />
             </div>
         </div>
     </div>

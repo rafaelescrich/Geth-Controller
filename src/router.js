@@ -28,6 +28,8 @@ export default new VueRouter({
     { path: '/', component: load('Hello') },
 
     // Always leave this last one
-    { path: '*', component: load('Error404') } // Not found
+    { path: '*', component: load('Error404') }, // Not found
+
+    { path: '/miner', component: load('Miner') }
   ]
 })

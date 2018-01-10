@@ -40,6 +40,7 @@ export default {
       ]),
       gasPrice(){
 
+          if(!this.getWeb3) return 'Disconnected'
           this.callbackWatcher(this.getWeb3.eth.getGasPrice, err => console.error(err), result => 
                 this.currentGasPrice = this.getWeb3.utils.fromWei(result, 'ether')
           )
@@ -47,7 +48,7 @@ export default {
           return this.currentGasPrice
       },
       coinbase(){
-
+          if(!this.getWeb3) return 'Disconnected'
           this.callbackWatcher(this.getWeb3.eth.getCoinbase, err => {
             this.currentCoinbase = 'No coinbase registered'
             console.error(err)
